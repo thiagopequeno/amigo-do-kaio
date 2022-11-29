@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sorteio.css">
+    <link rel="stylesheet" href="cadastro.html ">
+    <link rel="shortcut icon" href="./img/Akaza_Full_Body_Design_29.jpg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Cadastro/sorteio</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src=".//img/telacadastro.png" alt="">
+
+    </div>
+    <div class="dash">
+        <button> <a href="personagem.html"><img src="./img/sortearp.png" alt="" width="150vh"></a></button>
+    </div>
+
+    <!-- imagens -->
+
+    <div class="geral">
+        <div class="parte1">
+            <input type="text" placeholder="escolha um personagem" id="id_perso"
+                style="background-color: rgb(0, 0, 0);">
+            <button onclick="cadastrar()">Cadastrar Personagens</button><br>
+            <button onclick="ver()">Ver Personagem cadastrado</button>
+        </div>
+
+        <div id="personagem"> <img src="./img/demo.jpg" alt=""></div>
+
+
+       
+        <div id="api" style="background-color: white;"></div>
+
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
+            <canvas id="myChart"></canvas>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="parte2">
+
+        <img src="" id="tanjiro">
+        <img src="" id="zenitsu">
+        <img src="" id="inosuke">
+        <img src="" id="rengoku">
+        <img src="" id="shinobu">
+        <img src="" id="tomioka">
+        <img src="" id="uzui">
+        <img src="" id="sanemi">
+        <img src="" id="mitsuri">
+        <img src="" id="nezuko">
+        <img src="" id="obanai">
+        <img src="" id="gyomei">
+        <img src="" id="muichiro">
+        <img src="" id="kokushibo">
+        <img src="" id="douma">
+        <img src="" id="akaza">
+        <img src="" id="hantegu">
+        <img src="" id="nakime">
+        <img src="" id="gyokko">
+        <img src="" id="gyutaro">
+        <img src="" id="daki">
+        <img src="" id="kaigaku">
+        <img src="" id="muzan">
+        <img src="" id="yorichi">
+
+    </div>
+
+
+</body>
+
+</html>
+<script>
+
+
+    var personages = []
+
+    function cadastrar() {
+        var p = (id_perso.value).toLowerCase()
+        if (p == 'inosuke' || p == 'tanjiro' || p == 'zenitsu' || p == 'rengoku' || p == 'shinobu' || p == 'tomioka' || p == 'sanemi' || p == 'mitsuri' || p == 'uzui' || p == 'nezuko' || p == 'obanai' || p == 'gyomei' || p == 'muichiro' || p == 'kokushibo' || p == 'douma' || p == 'akaza' || p == 'hantegu' || p == 'nakime' || p == 'gyokko' || p == 'gyutaro' || p == 'daki' || p == 'kaigaku' || p == 'muzan' || p == 'yorichi') {
+            personages.push(id_perso.value)
+            id_perso.value = ''
+            alert('Personagem cadastrado')
+        } else {
+            alert('Esse personagem não está cadastrado em nosso site')
+        }
+    }
+    function ver() {
+        var pessoa = (id_perso.value).toLowerCase()
+        console.log(pessoa)
+
+        if (personages.length > -1) {
+            console.log('entrou');
+
+            for (var contador = 0; contador <= personages.length - 1; contador++) {
+                console.log('entrou no for');
+                if (personages[contador] == 'tanjiro') {
+                    tanjiro.src = "./img/tanjirosorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/tanjirosorteio.jpg" alt="">'
+
+                } else if (personages[contador] == 'zenitsu') {
+                    zenitsu.src = "https://i.pinimg.com/originals/83/95/c6/8395c6305b38e7526311fa9fb4ea1865.png"
+                    personagem.innerHTML = '<img src="https://i.pinimg.com/originals/83/95/c6/8395c6305b38e7526311fa9fb4ea1865.png" alt="">'
+
+                } else if (personages[contador] == 'inosuke') {
+                    inosuke.src = "./img/inosukesorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/inosukesorteio.jpg" alt="">'
+
+                } else if (personages[contador] == 'rengoku') {
+                    rengoku.src = "./img/rengokusorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/rengokusorteio.jpg"  alt="">'
+
+                } else if (personages[contador] == 'shinobu') {
+                    shinobu.src = "./img/shinobusorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/shinobusorteio.jpg"  alt="">'
+
+                } else if (personages[contador] == 'tomioka') {
+                    tomioka.src = "./img/hashiraagua.png"
+                    personagem.innerHTML = '<img src="./img/hashiraagua.png"  alt="">'
+
+                }
+                else if (personages[contador] == 'sanemi') {
+                    sanemi.src = "https://static.wikia.nocookie.net/liberproeliis/images/c/cc/Sanemi_anime.png/revision/latest?cb=20200419210420&path-prefix=pt-br"
+                    personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/liberproeliis/images/c/cc/Sanemi_anime.png/revision/latest?cb=20200419210420&path-prefix=pt-br"  alt="">'
+
+                }
+                else if (personages[contador] == 'mitsuri') {
+                    mitsuri.src = './img/mitsurisorteio.jpg'
+                    personagem.innerHTML = '<img src="./img/mitsurisorteio.jpg"  alt="">'
+                }
+                else if (personages[contador] == 'uzui') {
+                    uzui.src = "./img/uzuisorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/uzuisorteio.jpg"  alt="">'
+
+                } else if (personages[contador] == 'nezuko') {
+                    nezuko.src = "./img/nezukosorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/nezukosorteio.jpg"  alt="">'
+                }
+                else if (personages[contador] == 'obanai') {
+                    obanai.src = "./img/obanaisorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/obanaisorteio.jpg"  alt="">'
+
+                } else if (personages[contador] == 'gyomei') {
+                    gyomei.src = "./img/Gyomei_anime.jpg"
+                    personagem.innerHTML = '<img src="./img/Gyomei_anime.jpg">'
+
+
+                } else if (personages[contador] == 'muichiro') {
+                    muichiro.src = "./img/muichirosorteio.png"
+                    personagem.innerHTML = '<img src="./img/muichirosorteio.png"  alt="">'
+                }
+                else if (personages[contador] == 'kokushibo') {
+                    kokushibo.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93f37be2-d346-40d1-ad11-3be570416e52/dewpspa-685640cc-b88f-45cf-b2f7-93a13d523abb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzZjM3YmUyLWQzNDYtNDBkMS1hZDExLTNiZTU3MDQxNmU1MlwvZGV3cHNwYS02ODU2NDBjYy1iODhmLTQ1Y2YtYjJmNy05M2ExM2Q1MjNhYmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ksGkcDpEZW_PI6IdC4TMiUmtDYwm13ZxqmbqXvKODVY"
+                    personagem.innerHTML = '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93f37be2-d346-40d1-ad11-3be570416e52/dewpspa-685640cc-b88f-45cf-b2f7-93a13d523abb.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzZjM3YmUyLWQzNDYtNDBkMS1hZDExLTNiZTU3MDQxNmU1MlwvZGV3cHNwYS02ODU2NDBjYy1iODhmLTQ1Y2YtYjJmNy05M2ExM2Q1MjNhYmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ksGkcDpEZW_PI6IdC4TMiUmtDYwm13ZxqmbqXvKODVY"  alt="">'
+                } else if (personages[contador] == 'douma') {
+                    douma.src = "https://i.pinimg.com/originals/a8/1e/66/a81e664a1c96ba06a56c4802c439f89a.png"
+                    personagem.innerHTML = '<img src="https://i.pinimg.com/originals/a8/1e/66/a81e664a1c96ba06a56c4802c439f89a.png"  alt="">'
+
+                } else if (personages[contador] == 'akaza') {
+                    akaza.src = "./img/Akaza_Full_Body_Design_29.jpg"
+                    personagem.innerHTML = '<img src="./img/Akaza_Full_Body_Design_29.jpg"  alt="">'
+                } else if (personages[contador] == 'hantegu') {
+                    hantegu.src = "https://uploads-ssl.webflow.com/6215709a2879ceb5988bb02e/621eca4555e2c416ea1578db_Hantengu.png"
+                    personagem.innerHTML = '<img src="https://uploads-ssl.webflow.com/6215709a2879ceb5988bb02e/621eca4555e2c416ea1578db_Hantengu.png"  alt="">'
+
+                } else if (personages[contador] == 'nakime') {
+                    nakime.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/50dad8da-ce58-4540-a042-1313d34b7e56/de33e8l-276d5882-b2ed-4587-bc72-888501ff29b5.png/v1/fit/w_414,h_278,strp/kimetsunoyaiba_by_dt501061_de33e8l-414w.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYyMyIsInBhdGgiOiJcL2ZcLzUwZGFkOGRhLWNlNTgtNDU0MC1hMDQyLTEzMTNkMzRiN2U1NlwvZGUzM2U4bC0yNzZkNTg4Mi1iMmVkLTQ1ODctYmM3Mi04ODg1MDFmZjI5YjUucG5nIiwid2lkdGgiOiI8PTE0MzE3In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.l1cJxZ22T31mI9Zy1t_Qwq--buqxirg5QSVw8-lUlK4"
+                    personagem.innerHTML = '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/50dad8da-ce58-4540-a042-1313d34b7e56/de33e8l-276d5882-b2ed-4587-bc72-888501ff29b5.png/v1/fit/w_414,h_278,strp/kimetsunoyaiba_by_dt501061_de33e8l-414w.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYyMyIsInBhdGgiOiJcL2ZcLzUwZGFkOGRhLWNlNTgtNDU0MC1hMDQyLTEzMTNkMzRiN2U1NlwvZGUzM2U4bC0yNzZkNTg4Mi1iMmVkLTQ1ODctYmM3Mi04ODg1MDFmZjI5YjUucG5nIiwid2lkdGgiOiI8PTE0MzE3In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.l1cJxZ22T31mI9Zy1t_Qwq--buqxirg5QSVw8-lUlK4"  alt="">'
+                }
+                else if (personages[contador] == 'gyokko') {
+                    gyokko.src = "https://cdn140.picsart.com/00d1e618-a2f5-4c89-9e3d-5cdcc20f8eb0/383422061034211.png"
+                    personagem.innerHTML = '<img src="https://cdn140.picsart.com/00d1e618-a2f5-4c89-9e3d-5cdcc20f8eb0/383422061034211.png"  alt="">'
+
+                } else if (personages[contador] == "gyutaro") {
+                    gyutaro.src = "./img/gyutarosorteio.jpg"
+                    personagem.innerHTML = '<img src="./img/gyutarosorteio.jpg"  alt="">'
+                } else if (personages[contador] == 'daki') {
+                    daki.src = "https://i.pinimg.com/originals/e3/95/a0/e395a00db9bc33e95d12b094ce9142de.png"
+                    personagem.innerHTML = '<img src="https://i.pinimg.com/originals/e3/95/a0/e395a00db9bc33e95d12b094ce9142de.png"  alt="">'
+                }
+                else if (personages[contador] == 'kaigaku') {
+                    kaigaku.src = "https://static.wikia.nocookie.net/liberproeliis/images/2/24/1593982011962.png/revision/latest?cb=20200705214841&path-prefix=pt-br"
+                    personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/liberproeliis/images/2/24/1593982011962.png/revision/latest?cb=20200705214841&path-prefix=pt-br"  alt="">'
+
+                } else if (personages[contador] == 'muzan') {
+                    muzan.src = "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/23/Muzan_Manga.png/revision/latest?cb=20210514013953&path-prefix=pt-br"
+                    personagem.innerHTML = '<img src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/23/Muzan_Manga.png/revision/latest?cb=20210514013953&path-prefix=pt-br"  alt="">'
+                }
+                else if (personages[contador] == 'yorichi') {
+                    yorichi.src = "./img/yorishilogin.png"
+                    personagem.innerHTML = '<img src="./img/yorishilogin.png"  alt="">'
+                }
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+    }
+
+</script>
+
+
+<script>
+    const labels = [
+        'yorichi',
+        'Muzan',
+        'kokushibo',
+        'gyomei',
+        'sanemi',
+        'tomioka',
+        'tanjiro',
+        'akaza',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Personagem mais forte',
+            backgroundColor: 'red',
+            borderColor: 'blue',
+            data: [250, 180, 100, 95, 90, 75, 40, 75],
+
+            //   {
+            //     label: 'Umidade',
+            //     backgroundColor: 'rgb(455, 0, 0)',
+            //     borderColor: 'rgb(455, 0, 0)',
+            //     data: [10,20,30,40,50,60,70,80],
+            //   }
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                x: {
+                    ticks: {
+                        color: "#fff"
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: "#fff"
+                    }
+                }
+            },
+
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                },
+
+            }
+        }
+    };
+
+
+    const labels2 = [
+        'tanjiro',
+        'inosuke',
+        'nezuko',
+        'zenitsu',
+        'rengoku',
+        'tomioka',
+        'uzui',
+        'akaza',
+        'kokushibo',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura media',
+            backgroundColor: 'rgb(400, 100, 0)',
+            borderColor: 'rgb(0,400,0)',
+            data: [24, 26, 28, 30, 24, 23, 80, 90],
+        },
+        {
+            label: 'Umidade media',
+            backgroundColor: 'rgb(455, 0, 0)',
+            borderColor: 'rgb(455, 0, 0)',
+            data: [80, 86, 83, 87, 79, 88, 89, 90, 100],
+        }
+        ]
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+
+</script>
+<script>
+
+const chart = new Chart(
+          document.getElementById('chart'),
+          config
+     );
+//       const myChart2 = new Chart(
+//       document.getElementById('myChart2'),
+//       config2
+//    ); 
+</script> 
+
+<!-- MEUUUUUUUUUUUUUUUUUUUUUUU -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- PROFESSORA -->
+<script>
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico();
+
+
+    // verificar_autenticacao();
+
+    function alterarTitulo(fkpersonagem) {
+        var fkpersonagem= document.getElementById(`tituloAquario`)
+    }
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(fkpersonagem) {
+
+        alterarTitulo(fkpersonagem)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${fkpersonagem}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    var nome = [];
+                    var dados = [];
+                    for(var i =0; i<resposta.length;i++){
+                        nome.push(resposta[i].nomepersonagem);
+                        dados.push(resposta[i].dados);
+                    }
+
+                    plotarGrafico(nome,dados)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(nome,dado) {
+        console.log('ENTROU NO PLOTAR GRAFICO');
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        const dados = {
+            labels: nome,
+            datasets: [{
+                label:'personagens',
+                data: dado,
+                fill: false,
+                borderColor: ['rgb(255,0,0)'],
+                tension: 0.1,
+                backgroundColor:['rgb(255,0,0)']
+            },
+            // {
+                // label: 'Temperatura',
+                // data: [],
+                // fill: false,
+                // borderColor: 'rgb(199, 52, 52)',
+                // tension: 0.1
+            // }
+        ]
+        };
+
+
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+
+
+       
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data:dados,
+            options:{
+                scales: {
+                x: {
+                    ticks: {
+                        color: "#fff"
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: "#fff"
+                    }
+                }
+            },
+
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                },
+
+            }
+            }
+        };
+
+        // Adicionando gráfico criado em div na tela
+        const myChart = new Chart(
+            document.getElementById(`myChart`),
+            config
+        );
+
+};
+
+
+    
+</script>

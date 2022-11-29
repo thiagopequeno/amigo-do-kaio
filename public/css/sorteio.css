@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    background-color: black;
+}
+.header{
+    display: flex;
+    /* background: linear-gradient(to bottom,rgb(67, 1, 58),black); */
+    background-color: rgb(0, 0, 0);
+    border: solid black;
+    width: 98%;
+    justify-content: space-around;
+}
+#personagem{
+    display: flex;
+    width: 85%;
+}
+#personagem img{ 
+    display: flex;
+    margin-left: 10%;
+    /* justify-content: center; */
+    /* width: 45%; */
+    
+}
+canvas{
+    border: solid white;
+}
+h4{
+    gap: 2%;
+}
+.header img{
+    display: flex;
+    /* background-color: aqua; */
+    width: 40%;
+
+}.dash{
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(0, 0, 0);
+}
+.dash button{
+    border-radius: 0%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+input{
+    color: white;
+}
+.parte1{
+    display: flex;
+    /* background: linear-gradient(to right,rgb(67, 1, 58),black); */
+    background: linear-gradient(black,darkred);
+    flex-direction: column;
+    height: 76vh;
+    width: 50vh;
+}
+.geral .fundo img{
+    
+    display: flex;
+    justify-content: right;
+}
+
+
+.geral{
+    display: flex;
+    background: linear-gradient(black,darkred);
+    justify-content: space-between;
+    
+}
+.geral img{
+    display: flex;
+    width: 70%;
+}
+.parte1 button{
+    border-radius: 20%;
+    /* background-color: white; */
+    background-color: red;
+    color: white;
+}
+h4 button{
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.parte2 img{
+    width: 20%;
+    /* border: solid white; */
+
+}
+.parte2{
+    background-color: rgb(0, 0, 0);
+}
+.final{
+    background-color: black;
+}
